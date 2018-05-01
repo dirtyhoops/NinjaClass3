@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+
+        class Ninja {
+            constructor(name) {
+                this.name = name;
+                this.health = 100;
+                this.speed = 3;
+                this.strength = 3;
+            } 
+
+            sayName() {
+                console.log(`My name is ${this.name}`);
+            }
+
+            showStats() {
+                console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`)
+            }
+
+            drinkSake() {
+                this.health += 10;
+            }
+
+        } //end of Ninja class
+
+
+        class Sensei extends Ninja {
+            constructor(name) {
+                super(name);
+                this.health = 200;
+                this.speed = 10;
+                this.strength = 10;
+                this.wisdom = 10;
+            }
+
+            speakWisdom() {
+                super.drinkSake();
+                console.log("Just be like water")
+                }
+        }
+
+    
+        var ninja4 = new Ninja("Daryll");
+            ninja4.sayName();
+            ninja4.showStats();
+            ninja4.drinkSake();
+            ninja4.showStats();
+
+        var sensei1 = new Sensei("Goku")
+
+            sensei1.showStats();
+            sensei1.speakWisdom();
+            sensei1.showStats();
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+
+</body>
+</html>
